@@ -1,0 +1,52 @@
+@startuml
+
+Class Zoo{
+
+}
+
+ Class Animal {
+- name : String
+- age : int
+- gender : String
+- weightPounds : int
++ eat()
++ sleep()
+}
+
+Class Fish{
+
++ swim()
+}
+
+abstract Class Bird{
+
++ fly()
+}
+
+Class Chicken{
+
+
+}
+
+Class Sparrow{
+
+
+}
+
+interface Flyable
+
+Zoo "0" --> "*" Animal : "Contains"
+Animal <|-- Fish
+Animal <|-- Bird
+Bird <|-- Sparrow
+Bird <|-- Chicken
+Flyable <.. Bird
+
+
+skinparam class{
+BackgroundColor White
+BorderColor Black
+}
+
+
+@enduml
