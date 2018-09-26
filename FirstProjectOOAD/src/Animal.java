@@ -15,6 +15,14 @@ public class Animal {
           this.name = name;
       }
 
+      public Animal(String name, int age, String gender, int weightPounds)
+      {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+          this.weightPounds = weightPounds;
+      }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -54,6 +62,11 @@ public class Animal {
       public void sleep()
       {
           System.out.println("Going to dreamland! Need to sleep here");
+      }
+
+      public void move()
+      {
+
       }
 
 }

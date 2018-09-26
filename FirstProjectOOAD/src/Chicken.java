@@ -10,6 +10,11 @@ public class Chicken extends Bird{
         super(name);
     }
 
+    public Chicken(String name, int age, String gender, int weightInPounds)
+    {
+        super(name, age, gender, weightInPounds);
+    }
+
      public void fly()
      {
          System.out.println("\n" + getName() + ": " +  "\nThis chicken can't fly! It's not a Batman");
