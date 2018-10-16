@@ -1,0 +1,78 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+class Guitar{
++ Guitar(serialNumber : String, price : double, spec : GuitarSpec)
+
+- serialNumber : String
+- price : double
+- spec : GuitarSpec
+
++ getSerialNumber() : String
++ getPrice() : double
+- setPrice(newPrice : double) : void
++ getGuitarSpec() : GuitarSpec
+
+}
+
+
+class Inventory{
++ Inventory()
+
+- guitars : LinkedList
+
++ addGuitar(serialNumber : String, price : double,spec : GuitarSpec) : void
++ getGuitar(serialNumber : String) : Guitar
++ searchSimple(searchGuitar : GuitarSpec) : List <Guitar>
+
+}
+
+class GuitarSpec{
++ GuitarSpec(builder : Builder, model : String,
+             type : Type, noString : NumString, backWood : Wood, topWood : Wood)
+
+
+ - builder : Builder
+ - model : String
+ - type : Type
+ - noString : NumString
+ - backWood : Wood
+ - topWood: Wood
+
++ getBuilder() : Builder
++ getModel() : String
++ getType() : Type
++ getNumStrings() : NumString
++ getBackwood() : Wood
++ getTopwood() : Wood
++ matches(spec : GuitarSpec) : boolean
+}
+
+Inventory o-- Guitar : contains
+Guitar --> GuitarSpec : has a
+
+enum Wood{
+ALDER
+CEDAR
+MAHOGANY
+}
+
+enum Builder{
+FENDER
+GIBSON
+MARTIN
+COLLINGS
+}
+
+enum Type{
+ACOUSTIC
+ELECTRIC
+}
+
+enum NumString{
+SIXSTRING
+TWELVESTRING
+}
+
+
+@enduml

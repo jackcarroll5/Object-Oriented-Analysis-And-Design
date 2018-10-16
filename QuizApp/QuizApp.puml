@@ -1,0 +1,33 @@
+@startuml
+
+
+
+class Question{
+- question : String
+- answer : String
++ setText()
++ setAnswer()
++ display()
++ setQuestion()
++ checkAnswer()
+
+}
+
+class ChoiceQuestion{
+- choices : String[]
++ display()
++ addChoice(text : String, answer : boolean)
+}
+
+class Quiz{
++ createQuestion()
++ presentQuestion()
++ addChoiceQuestion()
+}
+
+
+Quiz "0" --> "*" Question : "Consists"
+Question <|-- ChoiceQuestion
+
+
+@enduml
